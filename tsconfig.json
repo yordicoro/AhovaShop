@@ -3,6 +3,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "clothing-core": [
+        "projects/clothing-core/src/public-api.ts"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -22,5 +28,25 @@
     "typeCheckHostBindings": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/front-office/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/front-office/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/back-office/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/back-office/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/clothing-core/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/clothing-core/tsconfig.spec.json"
+    }
+  ]
 }

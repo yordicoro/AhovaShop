@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Polo Oversize",
+      "price": 59.90,
+      "stock": 20
+    },
+    {
+      "id": "2",
+      "name": "Casaca Denim",
+      "price": 149.90,
+      "stock": 10
+    },
+    {
+      "id": "3",
+      "name": "Zapatillas Urbanas",
+      "price": 199.90,
+      "stock": 5
+    }
+  ]
+}

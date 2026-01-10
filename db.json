@@ -1,0 +1,39 @@
+{
+  "orders": [],
+  "products": [
+    {
+      "id": "73911115-94b6-4def-9755-3bd65852c2de",
+      "name": "Polo Algodón Manga Corta Hombre",
+      "price": 16,
+      "stock": 4,
+      "description": "Polo de verano",
+      "category": "men's clothing",
+      "imageUrl": "https://media.falabella.com/falabellaPE/883529740_1/w=1200,h=1200,fit=pad",
+      "brand": "Wolf&hank",
+      "gender": "MEN",
+      "season": "SPRING_SUMMER",
+      "subcategory": "Polos",
+      "material": "Algodón",
+      "composition": "80% Algodón",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "Blanco",
+        "Gris",
+        "Negro",
+        "Azul",
+        "Morado"
+      ],
+      "images": [
+        "https://media.falabella.com/falabellaPE/883529740_1/w=1200,h=1200,fit=pad"
+      ],
+      "tags": [],
+      "variants": []
+    }
+  ]
+}
