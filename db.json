@@ -88,6 +88,25 @@
           "price": 14.5
         }
       ]
+    },
+    {
+      "id": "qw7u2",
+      "customerId": "1",
+      "total": 38.5,
+      "status": "CONFIRMED",
+      "createdAt": "2026-01-11T13:26:10.007Z",
+      "items": [
+        {
+          "productId": "73911115-94b6-4def-9755-3bd65852c2de",
+          "quantity": 1,
+          "price": 22
+        },
+        {
+          "productId": "a847676f-4e37-45d4-b2ab-1c354598a653",
+          "quantity": 1,
+          "price": 16.5
+        }
+      ]
     }
   ],
   "products": [
@@ -317,6 +336,35 @@
       "colors": [],
       "images": [
         "https://media.falabella.com/falabellaPE/148336884_01/w=1200,h=1200,fit=pad"
+      ],
+      "tags": [],
+      "variants": []
+    },
+    {
+      "id": "bb25869b-fda9-40ad-8a9f-af8637eb91f9",
+      "name": "Vestido Verano",
+      "price": 15,
+      "stock": 3,
+      "description": "Vestido para mujer",
+      "category": "women's clothing",
+      "imageUrl": "https://media.falabella.com/falabellaPE/883520405_1/w=1200,h=1200,fit=pad",
+      "brand": "Lomaas",
+      "gender": "WOMEN",
+      "season": "SPRING_SUMMER",
+      "subcategory": "Vestido",
+      "material": "ALgodon",
+      "composition": "ALgodon",
+      "sizes": [
+        "XS",
+        "S",
+        "M"
+      ],
+      "colors": [
+        "Blanco",
+        "Gris"
+      ],
+      "images": [
+        "https://media.falabella.com/falabellaPE/883520405_1/w=1200,h=1200,fit=pad"
       ],
       "tags": [],
       "variants": []
@@ -2782,6 +2830,438 @@
     {
       "id": "223ee844-050b-48d2-81e0-acd4f870a57a",
       "timestamp": "2026-01-11T12:13:37.687Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "475dd67a-34c8-4e1d-b36a-083aed785f09",
+      "timestamp": "2026-01-11T12:20:04.077Z",
+      "level": "INFO",
+      "message": "Sesión recuperada desde LocalStorage",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "5bd4452e-e06b-4a49-bb55-9e65db0e941b",
+      "timestamp": "2026-01-11T12:20:04.234Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "dfd8a893-332b-47ff-86cd-c17f3caf7766",
+      "timestamp": "2026-01-11T12:20:15.825Z",
+      "level": "INFO",
+      "message": "Sesión recuperada desde LocalStorage",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "872157cb-4adc-4ca9-aee8-96a3709e197e",
+      "timestamp": "2026-01-11T12:20:16.004Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "96c8114d-c42d-40bb-a0f0-a2486a959b71",
+      "timestamp": "2026-01-11T12:20:52.131Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "d893b347-5a8a-4263-8128-471f8aa561b3",
+      "timestamp": "2026-01-11T12:20:52.166Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "477f3b7a-1db6-477c-b1f1-c34c1fbef0bc",
+      "timestamp": "2026-01-11T12:20:52.938Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "648ae0ad-b177-48da-b10c-e44e3c75931f",
+      "timestamp": "2026-01-11T12:20:53.745Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "82cb3cb5-e0f0-43d3-9ffc-07204a76fd2a",
+      "timestamp": "2026-01-11T12:20:54.233Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "fbbaade7-c5df-4b5a-80ed-f6a5774b23d5",
+      "timestamp": "2026-01-11T12:20:56.234Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "bf59dd82-351b-4674-9df2-f5abdd6dfa81",
+      "timestamp": "2026-01-11T12:21:54.569Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "6a7c891e-8e49-43f5-866c-7d63c00ed4be",
+      "timestamp": "2026-01-11T12:30:55.658Z",
+      "level": "ERROR",
+      "message": "Global HTTP Error:",
+      "data": [
+        "Error Code: 0\nMessage: Http failure response for http://localhost:3000/logs: 0 Unknown Error"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "636c36fe-41c8-481b-bbf2-2964dff07957",
+      "timestamp": "2026-01-11T12:30:56.736Z",
+      "level": "ERROR",
+      "message": "Global HTTP Error:",
+      "data": [
+        "Error Code: 0\nMessage: Http failure response for http://localhost:3000/logs: 0 Unknown Error"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "56c19958-9351-459d-b63e-05d8afbc36cc",
+      "timestamp": "2026-01-11T12:30:56.832Z",
+      "level": "ERROR",
+      "message": "Global HTTP Error:",
+      "data": [
+        "Error Code: 0\nMessage: Http failure response for http://localhost:3000/logs: 0 Unknown Error"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "19bb25b3-0ca2-49ef-9a3a-8511f19f7c45",
+      "timestamp": "2026-01-11T12:30:56.865Z",
+      "level": "ERROR",
+      "message": "Global HTTP Error:",
+      "data": [
+        "Error Code: 0\nMessage: Http failure response for http://localhost:3000/logs: 0 Unknown Error"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "e57d2fcd-30c0-4864-befd-8366d5edc97b",
+      "timestamp": "2026-01-11T12:30:56.969Z",
+      "level": "ERROR",
+      "message": "Global HTTP Error:",
+      "data": [
+        "Error Code: 0\nMessage: Http failure response for http://localhost:3000/logs: 0 Unknown Error"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "98fafc6d-a8dd-47d6-a9c8-822b8a5dda24",
+      "timestamp": "2026-01-11T12:31:16.510Z",
+      "level": "INFO",
+      "message": "Sesión recuperada desde LocalStorage",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "18196d91-64cb-4710-b1be-46763eb35b4b",
+      "timestamp": "2026-01-11T12:31:23.136Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "f1ac275e-1882-4542-9ecc-69811f1f7f01",
+      "timestamp": "2026-01-11T12:31:37.231Z",
+      "level": "INFO",
+      "message": "Sesión recuperada desde LocalStorage",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "0f7e678f-85c1-4559-b675-6d694a9aa51d",
+      "timestamp": "2026-01-11T12:31:37.397Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "38b1e3cc-3f8e-4e74-b0c2-f71568457278",
+      "timestamp": "2026-01-11T12:32:22.150Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "9f521ba5-c0ff-4fe4-925b-ff63774422e9",
+      "timestamp": "2026-01-11T13:18:11.968Z",
+      "level": "INFO",
+      "message": "Sesión recuperada desde LocalStorage",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "43ae59cb-fbcc-4410-a059-97179f380c76",
+      "timestamp": "2026-01-11T13:18:12.137Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "eba84373-2086-4630-9de5-ae926d64acce",
+      "timestamp": "2026-01-11T13:19:15.198Z",
+      "level": "INFO",
+      "message": "Sesión recuperada desde LocalStorage",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "9d311076-b865-45d5-96fe-93b30a0fd32c",
+      "timestamp": "2026-01-11T13:19:15.377Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "4312f8db-c249-4401-b51b-a0e97659a7ca",
+      "timestamp": "2026-01-11T13:22:23.640Z",
+      "level": "INFO",
+      "message": "Sesión recuperada desde LocalStorage",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "c8194a89-b79b-4907-a8c7-71cfa3638dbe",
+      "timestamp": "2026-01-11T13:22:23.996Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "fa1bf575-2733-42b5-ba71-930f63c7ca8a",
+      "timestamp": "2026-01-11T13:22:55.128Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "d052dcbc-b39c-46a8-b950-e8ace4808b26",
+      "timestamp": "2026-01-11T13:23:08.279Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "e9ab6130-cebf-44f2-b9d7-388bfe2b8df4",
+      "timestamp": "2026-01-11T13:25:04.974Z",
+      "level": "INFO",
+      "message": "Persisting product to Backend",
+      "data": [
+        {
+          "id": "bb25869b-fda9-40ad-8a9f-af8637eb91f9",
+          "name": "Vestido Verano",
+          "price": 15,
+          "stock": 3,
+          "description": "Vestido para mujer",
+          "category": "women's clothing",
+          "imageUrl": "https://media.falabella.com/falabellaPE/883520405_1/w=1200,h=1200,fit=pad",
+          "brand": "Lomaas",
+          "gender": "WOMEN",
+          "season": "SPRING_SUMMER",
+          "subcategory": "Vestido",
+          "material": "ALgodon",
+          "composition": "ALgodon",
+          "sizes": [
+            "XS",
+            "S",
+            "M"
+          ],
+          "colors": [
+            "Blanco",
+            "Gris"
+          ],
+          "images": [
+            "https://media.falabella.com/falabellaPE/883520405_1/w=1200,h=1200,fit=pad"
+          ],
+          "tags": [],
+          "variants": []
+        }
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "754f5734-b394-453c-8ae7-6cf148683b84",
+      "timestamp": "2026-01-11T13:25:05.092Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "9a3ef2a7-7983-4b2c-be63-7a8d3cfab9ab",
+      "timestamp": "2026-01-11T13:25:38.219Z",
+      "level": "DEBUG",
+      "message": "Iniciando intento de login",
+      "data": [
+        {
+          "username": "admin@ahovashop.com"
+        }
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "fc4ffe3e-2f17-4554-80f7-d86f936b51df",
+      "timestamp": "2026-01-11T13:25:38.729Z",
+      "level": "INFO",
+      "message": "Login exitoso",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "79438661-87ce-4d91-a9fb-2f8ca3ecbccb",
+      "timestamp": "2026-01-11T13:25:46.354Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "7ab7a793-65b8-47f1-a8dc-fc14a6a13cf2",
+      "timestamp": "2026-01-11T13:25:46.394Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "980353c0-fa82-4d1b-b4cd-42783397c334",
+      "timestamp": "2026-01-11T13:25:49.952Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "9d8bc324-6eba-435c-a139-5604af0fb399",
+      "timestamp": "2026-01-11T13:25:50.601Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "df099cb2-0aa5-4b25-9433-5fa792a07f1a",
+      "timestamp": "2026-01-11T13:25:51.215Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "c366f6d6-0382-40fa-9a11-2062a094686f",
+      "timestamp": "2026-01-11T13:25:55.168Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "4b5856ba-07e6-4c06-ba22-7921aefc92e8",
+      "timestamp": "2026-01-11T13:25:55.617Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "696343a3-a958-4dbd-a9be-a755ee84b810",
+      "timestamp": "2026-01-11T13:26:14.907Z",
+      "level": "INFO",
+      "message": "Sesión recuperada desde LocalStorage",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "8455210d-e4ca-4ca1-ab51-5db15a020564",
+      "timestamp": "2026-01-11T13:26:15.188Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "44e70f24-6315-436f-b770-33bd4e4d8f8a",
+      "timestamp": "2026-01-11T13:26:28.822Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "e68b020f-7c42-4226-b95b-47b53ae51a20",
+      "timestamp": "2026-01-11T13:26:54.449Z",
+      "level": "DEBUG",
+      "message": "Fetching products from Backend API",
+      "data": [],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "01a2909f-7fd6-41e2-a230-cc79f5382635",
+      "timestamp": "2026-01-11T13:27:04.171Z",
+      "level": "INFO",
+      "message": "Sesión recuperada desde LocalStorage",
+      "data": [
+        "Admin Ahova"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "f22012a5-abff-4b74-bcaa-513f79567fd8",
+      "timestamp": "2026-01-11T13:27:40.648Z",
       "level": "DEBUG",
       "message": "Fetching products from Backend API",
       "data": [],
