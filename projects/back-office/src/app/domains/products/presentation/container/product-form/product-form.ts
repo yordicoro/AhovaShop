@@ -137,51 +137,53 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
             </div>
 
             <!-- Tallas Disponibles -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-8">
-              <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">4</span>
-                Tallas Disponibles *
-              </h2>
-              
-              <div class="flex flex-wrap gap-3">
-                @for (size of presenter.availableSizes; track size) {
-                  <button type="button" 
-                    (click)="presenter.toggleSize(size)"
-                    [class.bg-slate-900]="isSelected('sizes', size)"
-                    [class.text-white]="isSelected('sizes', size)"
-                    [class.bg-slate-100]="!isSelected('sizes', size)"
-                    [class.text-slate-600]="!isSelected('sizes', size)"
-                    class="px-6 py-3 rounded-xl font-bold text-sm transition-all hover:scale-105 active:scale-95 border-2"
-                    [class.border-slate-900]="isSelected('sizes', size)"
-                    [class.border-slate-200]="!isSelected('sizes', size)">
-                    {{ size }}
-                  </button>
-                }
+            @if (presenter.showSizing) {
+              <div class="bg-white rounded-2xl border border-slate-200 p-8">
+                <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">4</span>
+                  Tallas Disponibles *
+                </h2>
+                
+                <div class="flex flex-wrap gap-3">
+                  @for (size of presenter.availableSizes; track size) {
+                    <button type="button" 
+                      (click)="presenter.toggleSize(size)"
+                      [class.bg-slate-900]="isSelected('sizes', size)"
+                      [class.text-white]="isSelected('sizes', size)"
+                      [class.bg-slate-100]="!isSelected('sizes', size)"
+                      [class.text-slate-600]="!isSelected('sizes', size)"
+                      class="px-6 py-3 rounded-xl font-bold text-sm transition-all hover:scale-105 active:scale-95 border-2"
+                      [class.border-slate-900]="isSelected('sizes', size)"
+                      [class.border-slate-200]="!isSelected('sizes', size)">
+                      {{ size }}
+                    </button>
+                  }
+                </div>
               </div>
-            </div>
 
-            <!-- Colores Disponibles -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-8">
-              <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">5</span>
-                Colores Disponibles *
-              </h2>
-              
-              <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                @for (color of presenter.availableColors; track color.value) {
-                  <button type="button"
-                    (click)="presenter.toggleColor(color.value)"
-                    [class.ring-4]="isSelected('colors', color.value)"
-                    [class.ring-slate-900]="isSelected('colors', color.value)"
-                    class="flex flex-col items-center gap-2 p-3 rounded-xl border-2 transition-all hover:scale-105 active:scale-95"
-                    [class.border-slate-900]="isSelected('colors', color.value)"
-                    [class.border-slate-200]="!isSelected('colors', color.value)">
-                    <div class="w-12 h-12 rounded-full border-2 border-slate-200" [style.background-color]="color.hex"></div>
-                    <span class="text-xs font-bold text-slate-700">{{ color.value }}</span>
-                  </button>
-                }
+              <!-- Colores Disponibles -->
+              <div class="bg-white rounded-2xl border border-slate-200 p-8">
+                <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">5</span>
+                  Colores Disponibles *
+                </h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                  @for (color of presenter.availableColors; track color.value) {
+                    <button type="button"
+                      (click)="presenter.toggleColor(color.value)"
+                      [class.ring-4]="isSelected('colors', color.value)"
+                      [class.ring-slate-900]="isSelected('colors', color.value)"
+                      class="flex flex-col items-center gap-2 p-3 rounded-xl border-2 transition-all hover:scale-105 active:scale-95"
+                      [class.border-slate-900]="isSelected('colors', color.value)"
+                      [class.border-slate-200]="!isSelected('colors', color.value)">
+                      <div class="w-12 h-12 rounded-full border-2 border-slate-200" [style.background-color]="color.hex"></div>
+                      <span class="text-xs font-bold text-slate-700">{{ color.value }}</span>
+                    </button>
+                  }
+                </div>
               </div>
-            </div>
+            }
 
             <!-- Stock e Imágenes -->
             <div class="bg-white rounded-2xl border border-slate-200 p-8">

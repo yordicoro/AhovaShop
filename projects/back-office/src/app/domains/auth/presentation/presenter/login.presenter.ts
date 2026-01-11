@@ -1,16 +1,17 @@
 import { Injectable, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginUseCase, User, LoginCredentials } from 'clothing-core';
-import { BaseFormPresenter } from '../../../../core/presentation/base/base-form.presenter';
-import { AuthPresenter } from '../../../../core/presentation/base/base-auth.presenter';
+import { User, LoginCredentials } from 'clothing-core';
+import { BaseFormPresenter } from '../../../../shared/presenters/base/base-form.presenter';
+import { AuthPresenter } from '../../../../shared/presenters/base/base-auth.presenter';
 import { Router } from '@angular/router';
+import { LoginUseCase } from '../../application/use-cases/login.usecase';
 
 @Injectable()
 export class LoginPresenter extends BaseFormPresenter<User> {
-    private fb = inject(FormBuilder);
     private loginUseCase = inject(LoginUseCase);
     private authPresenter = inject(AuthPresenter);
     private router = inject(Router);
+    private fb = inject(FormBuilder);
 
     public form: FormGroup = this.fb.group({
         email: ['', [Validators.required, Validators.email]],

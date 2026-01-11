@@ -9,16 +9,25 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#0f172a',
-                    gold: '#D4AF37',
-                    light: '#f1f5f9'
+                    DEFAULT: '#020617', // Slate 950
+                    hover: '#0f172a',  // Slate 900
                 },
-                secondary: '#334155',
-                accent: '#D4AF37',
+                'accent-gold': {
+                    light: '#FDE68A',
+                    DEFAULT: '#D4AF37',
+                    dark: '#B8860B'
+                },
+                secondary: {
+                    DEFAULT: '#334155', // Slate 600
+                    light: '#64748b'    // Slate 500
+                }
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
                 display: ['Outfit', 'sans-serif'],
+            },
+            backdropBlur: {
+                xs: '2px',
             }
         },
     },

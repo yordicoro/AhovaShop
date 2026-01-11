@@ -1,6 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { OrderAggregate, GetAllOrdersUseCase, UpdateOrderStatusUseCase } from 'clothing-core';
-import { BasePresenterWithSignals } from '../../../../core/presentation/base/base-signals.presenter';
+import { OrderAggregate } from 'clothing-core';
+import { BasePresenterWithSignals } from '../../../../shared/presenters/base/base-signals.presenter';
+import { GetAllOrdersUseCase } from '../../application/use-cases/get-all-orders.usecase';
+import { UpdateOrderStatusUseCase } from '../../application/use-cases/update-order-status.usecase';
 
 @Injectable()
 export class OrderListPresenter extends BasePresenterWithSignals<OrderAggregate[]> {

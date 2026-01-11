@@ -1,6 +1,7 @@
 import { Injectable, effect } from '@angular/core';
-import { Product, GetProductsUseCase } from 'clothing-core';
-import { BasePresenterWithSignals } from '../../../../core/presentation/base/base-signals.presenter';
+import { Product } from 'clothing-core';
+import { GetProductsUseCase } from '../../application/use-cases/get-products.usecase';
+import { BasePresenterWithSignals } from '../../../../shared/presenters/base/base-signals.presenter';
 
 import { Router } from '@angular/router';
 

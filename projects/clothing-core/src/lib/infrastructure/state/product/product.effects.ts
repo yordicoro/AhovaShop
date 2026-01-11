@@ -59,4 +59,11 @@ export class ProductEffects {
             )
         )
     );
+
+    handleFilters$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ProductActions.setCategory, ProductActions.setSearchTerm, ProductActions.clearFilters),
+            map(() => ProductActions.loadProducts({ pagination: { page: 1, pageSize: 12 } }))
+        )
+    );
 }

@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
-import { Product, GetProductByIdUseCase } from 'clothing-core';
-import { BasePresenterWithSignals } from '../../../../core/presentation/base/base-signals.presenter';
+import { Product } from 'clothing-core';
+import { GetProductByIdUseCase } from '../../application/use-cases/get-product-by-id.usecase';
+import { BasePresenterWithSignals } from '../../../../shared/presenters/base/base-signals.presenter';
 
 @Injectable()
 export class ProductDetailsPresenter extends BasePresenterWithSignals<Product> {

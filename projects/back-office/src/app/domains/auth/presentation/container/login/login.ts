@@ -4,80 +4,84 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginPresenter } from '../../presenter/login.presenter';
 
 @Component({
-    selector: 'app-login',
-    standalone: true,
-    imports: [CommonModule, ReactiveFormsModule],
-    providers: [LoginPresenter],
-    template: `
+  selector: 'app-login',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
+  providers: [LoginPresenter],
+  template: `
     <div class="min-h-screen flex items-center justify-center bg-slate-50 p-6 relative overflow-hidden">
-      <!-- Decorative Elements -->
-      <div class="absolute top-0 right-0 w-96 h-96 bg-slate-200/50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+      <!-- Luxury Background Elements -->
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-accent-gold/5 blur-3xl rounded-full"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-slate-900/5 blur-3xl rounded-full"></div>
 
-      <!-- Login Card -->
-      <div class="w-full max-w-md bg-white/70 backdrop-blur-xl rounded-3xl border border-white shadow-2xl p-10 relative z-10 transition-all">
-        <div class="text-center mb-10">
-          <div class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
+      <!-- Login Card (Glassmorphism) -->
+      <div class="w-full max-w-md glass rounded-[3rem] p-12 border border-white/40 shadow-2xl relative z-10">
+        <div class="text-center mb-12">
+          <div class="w-16 h-16 bg-slate-950 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-3 shadow-2xl relative">
+            <div class="absolute inset-0 bg-accent-gold opacity-10 blur-xl"></div>
+            <span class="text-accent-gold font-display font-black text-2xl relative z-10">A</span>
           </div>
-          <h1 class="text-3xl font-black text-slate-900 tracking-tight">Bienvenido</h1>
-          <p class="text-slate-500 font-medium">Panel de Administración AhovaShop</p>
+          <h1 class="text-3xl font-display font-black text-slate-950 tracking-tight">Portal de Administración</h1>
+          <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mt-2">Ahovashop Boutique Privada</p>
         </div>
 
         @if (presenter.error()) {
-          <div class="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 text-sm font-medium animate-shake">
+          <div class="mb-8 p-4 bg-red-400/5 border border-red-500/10 rounded-2xl text-red-500 text-[10px] font-bold uppercase tracking-widest text-center animate-shake">
             {{ presenter.error() }}
           </div>
         }
 
-        <form [formGroup]="presenter.form" (ngSubmit)="presenter.onSubmit()" class="space-y-6">
-          <div class="space-y-2">
-            <label class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Email Corporativo</label>
-            <input 
-              type="email" 
-              formControlName="email"
-              placeholder="admin@ahovashop.com"
-              class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 focus:border-slate-900 focus:ring-4 focus:ring-slate-100 outline-none transition-all font-medium"
-            >
+        <form [formGroup]="presenter.form" (ngSubmit)="presenter.onSubmit()" class="space-y-8">
+          <div class="space-y-6">
+            <div class="group">
+              <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 block mb-2 ml-4">Identidad Autorizada</label>
+              <input 
+                type="email" 
+                formControlName="email"
+                placeholder="admin@ahova.private"
+                class="w-full px-6 py-4 rounded-2xl bg-white/50 border border-slate-200 focus:border-accent-gold focus:ring-4 focus:ring-accent-gold/5 outline-none transition-all font-medium text-sm placeholder-slate-300"
+              >
+            </div>
+
+            <div class="group">
+              <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 block mb-2 ml-4">Contraseña Segura</label>
+              <input 
+                type="password" 
+                formControlName="password"
+                placeholder="••••••••"
+                class="w-full px-6 py-4 rounded-2xl bg-white/50 border border-slate-200 focus:border-accent-gold focus:ring-4 focus:ring-accent-gold/5 outline-none transition-all font-medium text-sm placeholder-slate-300"
+              >
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <label class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Contraseña</label>
-            <input 
-              type="password" 
-              formControlName="password"
-              placeholder="••••••••"
-              class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 focus:border-slate-900 focus:ring-4 focus:ring-slate-100 outline-none transition-all font-medium"
+          <div class="pt-4">
+            <button 
+              type="submit"
+              [disabled]="presenter.isSubmitting()"
+              class="btn-gold w-full py-5 shadow-2xl shadow-accent-gold/20 disabled:opacity-30 disabled:grayscale"
             >
+              @if (presenter.isSubmitting()) {
+                <div class="flex items-center justify-center gap-2">
+                  <div class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  <span class="text-[10px] uppercase font-bold tracking-widest">Verificando...</span>
+                </div>
+              } @else {
+                <span class="text-[10px] uppercase font-bold tracking-widest">Establecer Acceso</span>
+              }
+            </button>
           </div>
-
-          <button 
-            type="submit"
-            [disabled]="presenter.isSubmitting()"
-            class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-slate-800 transition-all shadow-xl shadow-slate-200 active:scale-[0.98] disabled:opacity-50 mt-4"
-          >
-            @if (presenter.isSubmitting()) {
-              <div class="flex items-center justify-center gap-2">
-                <div class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                Validando...
-              </div>
-            } @else {
-              Entrar al Panel
-            }
-          </button>
         </form>
 
-        <div class="mt-10 pt-10 border-t border-slate-100 text-center">
-          <p class="text-slate-400 text-xs font-medium">
-            ¿Olvidaste tus credenciales? <br> Contacta con soporte técnico.
+        <div class="mt-12 text-center">
+          <p class="text-slate-400 text-[8px] font-bold uppercase tracking-[0.2em] leading-loose">
+            Protocolos de Seguridad Empresarial Activos <br> 
+            <span class="text-slate-300">El acceso no autorizado está estrictamente prohibido</span>
           </p>
         </div>
       </div>
     </div>
   `,
-    styles: [`
+  styles: [`
     @keyframes shake {
       0%, 100% { transform: translateX(0); }
       25% { transform: translateX(-5px); }
@@ -87,5 +91,5 @@ import { LoginPresenter } from '../../presenter/login.presenter';
   `]
 })
 export class LoginPage {
-    protected presenter = inject(LoginPresenter);
+  protected presenter = inject(LoginPresenter);
 }

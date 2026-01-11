@@ -1,7 +1,9 @@
 import { Injectable, inject, computed } from '@angular/core';
-import { GetProductsUseCase, GetAllOrdersUseCase, Product, OrderAggregate } from 'clothing-core';
-import { BasePresenterWithSignals } from '../../../../core/presentation/base/base-signals.presenter';
+import { Product, OrderAggregate } from 'clothing-core';
+import { BasePresenterWithSignals } from '../../../../shared/presenters/base/base-signals.presenter';
 import { forkJoin } from 'rxjs';
+import { GetProductsUseCase } from '../../../products/application/use-cases/get-products.usecase';
+import { GetAllOrdersUseCase } from '../../../orders/application/use-cases/get-all-orders.usecase';
 
 export interface DashboardStats {
     totalProducts: number;

@@ -1,8 +1,10 @@
 import { Injectable, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
-import { Product, SaveProductUseCase, GetProductByIdUseCase, Gender, Season } from 'clothing-core';
-import { BaseFormPresenter } from '../../../../core/presentation/base/base-form.presenter';
+import { Product, Gender, Season } from 'clothing-core';
+import { BaseFormPresenter } from '../../../../shared/presenters/base/base-form.presenter';
 import { Router } from '@angular/router';
+import { SaveProductUseCase } from '../../application/use-cases/save-product.usecase';
+import { GetProductByIdUseCase } from '../../application/use-cases/get-product-by-id.usecase';
 
 @Injectable()
 export class ProductFormPresenter extends BaseFormPresenter<Product> {
@@ -64,6 +66,34 @@ export class ProductFormPresenter extends BaseFormPresenter<Product> {
     constructor() {
         super();
         this.initializeFormSignals();
+        this.setupCategorySubscription();
+    }
+
+    private setupCategorySubscription(): void {
+        this.form.get('category')?.valueChanges.subscribe(category => {
+            const sizesControl = this.form.get('sizes');
+            const colorsControl = this.form.get('colors');
+
+            const noSizingCategories = ['electronics', 'jewelery'];
+            const isNoSizingCategory = noSizingCategories.includes(category);
+
+            if (isNoSizingCategory) {
+                sizesControl?.clearValidators();
+                colorsControl?.clearValidators();
+            } else {
+                sizesControl?.setValidators([Validators.required]);
+                colorsControl?.setValidators([Validators.required]);
+            }
+
+            sizesControl?.updateValueAndValidity();
+            colorsControl?.updateValueAndValidity();
+        });
+    }
+
+    public get showSizing(): boolean {
+        const category = this.form.get('category')?.value;
+        const noSizingCategories = ['electronics', 'jewelery'];
+        return !noSizingCategories.includes(category);
     }
 
     public loadProduct(id: string): void {

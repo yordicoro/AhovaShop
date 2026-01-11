@@ -13,41 +13,17 @@ export const STOCK_ROUTES: Routes = [
         component: StockLayout,
         children: [
             {
-                path: '',
-                redirectTo: 'dashboard',
-                pathMatch: 'full'
-            },
-            {
                 path: 'dashboard',
                 component: MainPageContainer
-            },
-            {
-                path: 'inventory',
-                component: ProductsListPage
-            },
-            {
-                path: 'inventory/new',
-                component: ProductFormPage
-            },
-            {
-                path: 'inventory/edit/:id',
-                component: ProductFormPage
-            },
-            {
-                path: 'inventory/:id',
-                component: ProductDetailsPage
-            },
-            {
-                path: 'orders',
-                component: OrdersListPage
             },
             {
                 path: 'accessory/:accesory',
                 component: CategoryPageContainer
             },
             {
-                path: '**',
-                redirectTo: 'dashboard'
+                path: '',
+                redirectTo: 'dashboard',
+                pathMatch: 'full'
             }
         ]
     },

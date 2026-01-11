@@ -13,6 +13,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import {
   PRODUCT_REPOSITORY_PROVIDER,
   ORDER_REPOSITORY_PROVIDER,
+  AUTH_REPOSITORY_PROVIDER,
   productFeature,
   ProductEffects,
   orderFeature,
@@ -21,10 +22,19 @@ import {
   AuthEffects,
   cartFeature,
   ConfigService,
-  GlobalErrorInterceptor
+  GlobalErrorInterceptor,
+  ProductRepository as CoreProductRepository,
+  OrderRepository as CoreOrderRepository,
+  AuthRepository as CoreAuthRepository
 } from 'clothing-core';
 
 import { routes } from './app.routes';
+import { ProductRepository } from './domains/shop/domain/repositories/product.repository';
+import { ProductRepositoryImpl } from './domains/shop/infrastructure/repositories/product.repository.impl';
+import { AuthRepository } from './domains/auth/domain/repositories/auth.repository';
+import { AuthRepositoryImpl } from './domains/auth/infrastructure/repositories/auth.repository.impl';
+import { OrderRepository } from './domains/cart/domain/repositories/order.repository';
+import { OrderRepositoryImpl } from './domains/cart/infrastructure/repositories/order.repository.impl';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -45,6 +55,12 @@ export const appConfig: ApplicationConfig = {
 
     PRODUCT_REPOSITORY_PROVIDER,
     ORDER_REPOSITORY_PROVIDER,
+    AUTH_REPOSITORY_PROVIDER,
+
+    // Local repository providers
+    { provide: ProductRepository, useClass: ProductRepositoryImpl },
+    { provide: AuthRepository, useClass: AuthRepositoryImpl },
+    { provide: OrderRepository, useClass: OrderRepositoryImpl },
 
     // State Management
     provideStore(),

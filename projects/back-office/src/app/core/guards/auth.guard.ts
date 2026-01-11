@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { Router, CanActivateFn } from '@angular/router';
-import { AuthPresenter } from '../presentation/base/base-auth.presenter';
+import { AuthPresenter } from '../../shared/presenters/base/base-auth.presenter';
 
 export const authGuard: CanActivateFn = (route, state) => {
     const authPresenter = inject(AuthPresenter);
