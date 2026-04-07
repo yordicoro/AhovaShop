@@ -27,7 +27,7 @@ export class OrderListPresenter extends BasePresenterWithSignals<OrderAggregate[
         this.setLoading(true);
         this.updateOrderStatusUseCase.execute(order, 'CONFIRMED').subscribe({
             next: () => {
-                this.loadOrders(); // Recargar lista
+                this.loadOrders();
             },
             error: (err) => {
                 this.setError('Error al actualizar el pedido');

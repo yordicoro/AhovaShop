@@ -12,7 +12,6 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
   template: `
     <div class="min-h-screen bg-slate-50 p-8">
       <div class="max-w-5xl mx-auto">
-        <!-- Header -->
         <div class="mb-8">
           <h1 class="text-3xl font-black text-slate-900 tracking-tight">
             {{ presenter.isEditMode ? 'Editar Producto' : 'Nuevo Producto' }}
@@ -26,18 +25,17 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
           </div>
         } @else {
           <form [formGroup]="presenter.form" (ngSubmit)="presenter.onSubmit()" class="space-y-6">
-            
-            <!-- Información Básica -->
+
             <div class="bg-white rounded-2xl border border-slate-200 p-8">
               <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">1</span>
                 Información Básica
               </h2>
-              
+
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="md:col-span-2">
                   <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nombre del Producto *</label>
-                  <input type="text" formControlName="name" 
+                  <input type="text" formControlName="name"
                     class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-900 focus:ring-2 focus:ring-slate-100 outline-none transition-all">
                   @if (presenter.form.get('name')?.invalid && presenter.form.get('name')?.touched) {
                     <p class="text-xs text-red-600 mt-1 font-medium">Ingrese un nombre válido (mín. 3 caracteres)</p>
@@ -46,7 +44,7 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
 
                 <div>
                   <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Marca *</label>
-                  <input type="text" formControlName="brand" 
+                  <input type="text" formControlName="brand"
                     class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-900 focus:ring-2 focus:ring-slate-100 outline-none transition-all">
                 </div>
 
@@ -64,13 +62,12 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
               </div>
             </div>
 
-            <!-- Clasificación -->
             <div class="bg-white rounded-2xl border border-slate-200 p-8">
               <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">2</span>
                 Clasificación
               </h2>
-              
+
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Categoría *</label>
@@ -114,13 +111,12 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
               </div>
             </div>
 
-            <!-- Materiales -->
             <div class="bg-white rounded-2xl border border-slate-200 p-8">
               <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">3</span>
                 Materiales y Composición
               </h2>
-              
+
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Material Principal</label>
@@ -136,17 +132,16 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
               </div>
             </div>
 
-            <!-- Tallas Disponibles -->
             @if (presenter.showSizing) {
               <div class="bg-white rounded-2xl border border-slate-200 p-8">
                 <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                   <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">4</span>
                   Tallas Disponibles *
                 </h2>
-                
+
                 <div class="flex flex-wrap gap-3">
                   @for (size of presenter.availableSizes; track size) {
-                    <button type="button" 
+                    <button type="button"
                       (click)="presenter.toggleSize(size)"
                       [class.bg-slate-900]="isSelected('sizes', size)"
                       [class.text-white]="isSelected('sizes', size)"
@@ -161,13 +156,12 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
                 </div>
               </div>
 
-              <!-- Colores Disponibles -->
               <div class="bg-white rounded-2xl border border-slate-200 p-8">
                 <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                   <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">5</span>
                   Colores Disponibles *
                 </h2>
-                
+
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
                   @for (color of presenter.availableColors; track color.value) {
                     <button type="button"
@@ -185,13 +179,12 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
               </div>
             }
 
-            <!-- Stock e Imágenes -->
             <div class="bg-white rounded-2xl border border-slate-200 p-8">
               <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
                 <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-sm">6</span>
                 Stock e Imágenes
               </h2>
-              
+
               <div class="space-y-6">
                 <div>
                   <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Stock Total *</label>
@@ -213,7 +206,7 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
                       + Añadir Imagen
                     </button>
                   </div>
-                  
+
                   @for (control of presenter.imagesArray.controls; track $index; let i = $index) {
                     <div class="flex gap-2 mb-2">
                       <input type="url" [formControl]="$any(control)" placeholder="https://..."
@@ -228,7 +221,6 @@ import { ProductFormPresenter } from '../../presenter/product-form.presenter';
               </div>
             </div>
 
-            <!-- Actions -->
             <div class="flex gap-4 justify-end pt-6">
               <button type="button" routerLink="/inventory"
                 class="px-8 py-4 bg-slate-100 text-slate-700 rounded-xl font-bold uppercase text-sm tracking-wider hover:bg-slate-200 transition-all">

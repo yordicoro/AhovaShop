@@ -14,16 +14,16 @@ export class GlobalErrorInterceptor implements HttpInterceptor {
                 let errorMessage = '';
 
                 if (error.error instanceof ErrorEvent) {
-                    // Client-side error
+
                     errorMessage = `Error: ${error.error.message}`;
                 } else {
-                    // Server-side error
+
                     errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
                 }
 
                 this.logger.error('Global HTTP Error:', errorMessage);
 
-                // Return an observable with a user-facing error message
+
                 return throwError(() => new Error('Algo salió mal. Por favor, intenta de nuevo más tarde.'));
             })
         );

@@ -43,16 +43,16 @@ export class CartPresenter {
                 return;
             }
 
-            // Create Order Aggregate using Factory
+
             const orderAggregate = OrderFactory.createFromCart(items, user.id);
 
-            // Dispatch Create Order
+
             this.store.dispatch(OrderActions.createOrder({ order: orderAggregate }));
 
-            // Clear Cart
+
             this.store.dispatch(CartActions.clearCart());
 
-            // Feedback & Redirect
+
             this.notification.success('¡Pedido realizado con éxito!');
             this.router.navigate(['/shop']);
         });

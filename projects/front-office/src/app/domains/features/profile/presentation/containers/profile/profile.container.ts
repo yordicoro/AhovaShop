@@ -11,8 +11,7 @@ import { ProfilePresenter } from '../../presenters/profile.presenter';
   template: `
     <div class="bg-slate-50 min-h-screen pt-12 pb-24">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Premium Member Header -->
+
         <header class="mb-16 flex flex-col md:flex-row justify-between items-end gap-10">
           <div class="space-y-3">
               <nav class="flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-slate-500">
@@ -23,7 +22,7 @@ import { ProfilePresenter } from '../../presenters/profile.presenter';
               <h2 class="text-5xl font-display font-black text-slate-950 tracking-tighter">Panel de Miembro</h2>
               <p class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em]">Acceso Exclusivo &bull; Nivel Platinum</p>
           </div>
-          
+
           <div class="flex items-center gap-6">
               <button (click)="presenter.logout()" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-red-600 transition-colors flex items-center gap-2 group">
                   <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
@@ -34,12 +33,12 @@ import { ProfilePresenter } from '../../presenters/profile.presenter';
 
         @if (presenter.user$ | async; as user) {
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
-            <!-- Identity Profile Card -->
+
+
             <div class="lg:col-span-1 space-y-8">
               <div class="glass rounded-[3rem] p-10 border border-white/40 shadow-2xl relative overflow-hidden group">
                   <div class="absolute top-0 right-0 w-32 h-32 bg-accent-gold/5 blur-3xl group-hover:bg-accent-gold/10 transition-all"></div>
-                  
+
                   <div class="text-center mb-10">
                       <div class="inline-flex items-center justify-center w-24 h-24 bg-slate-950 rounded-[2rem] mb-6 rotate-3 shadow-2xl relative overflow-hidden group/avatar">
                           <div class="absolute inset-0 bg-accent-gold/20 blur-xl opacity-0 group-hover/avatar:opacity-100 transition-opacity"></div>
@@ -68,7 +67,7 @@ import { ProfilePresenter } from '../../presenters/profile.presenter';
                   </div>
               </div>
 
-              <!-- Quick Link Bóveda -->
+
               <div class="glass-dark rounded-[2.5rem] p-10 border border-white/10 shadow-2xl text-white">
                   <h4 class="text-[11px] font-black uppercase tracking-[0.3em] text-accent-gold mb-8">Mi Bóveda</h4>
                   <div class="space-y-6">
@@ -93,7 +92,7 @@ import { ProfilePresenter } from '../../presenters/profile.presenter';
               </div>
             </div>
 
-            <!-- Adquisitions Tracking -->
+
             <div class="lg:col-span-2 space-y-8">
               <div class="flex items-center justify-between mb-4">
                   <div class="flex items-center gap-3">
@@ -119,7 +118,7 @@ import { ProfilePresenter } from '../../presenters/profile.presenter';
                   <div class="space-y-6">
                       @for (aggregate of presenter.orders(); track aggregate.order.id) {
                           <div class="group relative glass rounded-[2rem] p-8 border border-white/40 shadow-xl hover:bg-white/60 transition-all duration-500 cursor-pointer overflow-hidden">
-                              <!-- Order Decoration -->
+
                               <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-slate-950/[0.02] -rotate-12 transform group-hover:scale-110 transition-transform">
                                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                               </div>
@@ -148,7 +147,7 @@ import { ProfilePresenter } from '../../presenters/profile.presenter';
                                           </p>
                                       </div>
                                   </div>
-                                  
+
                                   <div class="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto pt-4 md:pt-0 border-t md:border-t-0 border-slate-100">
                                       <p class="text-2xl font-display font-black text-slate-950 tracking-tighter">{{ aggregate.order.totalAmount | currency }}</p>
                                       <button class="text-[10px] font-black text-accent-gold uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 flex items-center gap-2">
@@ -170,7 +169,7 @@ import { ProfilePresenter } from '../../presenters/profile.presenter';
             </div>
           </div>
         } @else {
-          <!-- Non-authenticated state -->
+
           <div class="flex flex-col items-center justify-center py-60 glass rounded-[4rem] border border-white/40 shadow-2xl">
               <h3 class="text-3xl font-display font-black text-slate-950 mb-3 tracking-tight">Acceso Restringido</h3>
               <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-10">Inicie sesión para acceder a su panel exclusivo</p>

@@ -16,7 +16,6 @@ export class Product {
     public description?: string,
     public category?: string,
     public imageUrl?: string,
-    // Extended properties for e-commerce
     public brand?: string,
     public gender?: Gender,
     public season?: Season,
@@ -29,7 +28,6 @@ export class Product {
     public tags?: string[],
     public variants?: ProductVariant[]
   ) {
-    // Ensure backwards compatibility
     if (!this.sizes) this.sizes = [];
     if (!this.colors) this.colors = [];
     if (!this.images) this.images = this.imageUrl ? [this.imageUrl] : [];
@@ -44,23 +42,19 @@ export class Product {
     this.stock = quantity;
   }
 
-  // Check if a specific size is available
   isSizeAvailable(size: string): boolean {
     return this.sizes?.includes(size) ?? false;
   }
 
-  // Check if a specific color is available
   isColorAvailable(color: string): boolean {
     return this.colors?.includes(color) ?? false;
   }
 
-  // Get stock for a specific variant
   getVariantStock(size: string, color: string): number {
     const variant = this.variants?.find(v => v.size === size && v.color === color);
     return variant?.stock ?? 0;
   }
 
-  // Get primary image (first image or fallback to imageUrl)
   get primaryImage(): string | undefined {
     return this.images?.[0] ?? this.imageUrl;
   }

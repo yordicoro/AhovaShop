@@ -9,7 +9,6 @@ import { User, UserRole } from '../../domain/entities/user.entity';
 export class MockAuthRepository implements AuthRepository {
     private currentUser: User | null = null;
 
-    // Simulamos usuarios predefinidos
     private mockUsers: User[] = [
         new User('1', 'admin@ahovashop.com', 'Admin Ahova', UserRole.ADMIN, 'https://ui-avatars.com/api/?name=Admin+Ahova&background=0D8ABC&color=fff'),
         new User('2', 'cliente@gmail.com', 'Yordi Cliente', UserRole.CUSTOMER, 'https://ui-avatars.com/api/?name=Yordi+Cliente&background=random')

@@ -15,7 +15,7 @@ export class LoginPresenter extends BaseFormPresenter<User> {
 
     public form: FormGroup = this.fb.group({
         email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(4)]] // password real en el repo mock se usa email
+        password: ['', [Validators.required, Validators.minLength(4)]]
     });
 
     constructor() {
@@ -31,7 +31,7 @@ export class LoginPresenter extends BaseFormPresenter<User> {
         this.setLoading(true);
         const credentials: LoginCredentials = {
             email: this.form.value.email,
-            token: this.form.value.password // Usamos el password como token para el mock
+            token: this.form.value.password
         };
 
         this.loginUseCase.execute(credentials).subscribe({

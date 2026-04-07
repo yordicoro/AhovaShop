@@ -11,10 +11,8 @@ export class AuthPresenter extends BasePresenter {
     private getCurrentUserUseCase = inject(GetCurrentUserUseCase);
     private router = inject(Router);
 
-    // State
     private _user = signal<User | null>(null);
 
-    // Selectors
     public readonly user = computed(() => this._user());
     public readonly isAuthenticated = computed(() => !!this._user());
     public readonly isAdmin = computed(() => this._user()?.role === UserRole.ADMIN);
@@ -35,7 +33,7 @@ export class AuthPresenter extends BasePresenter {
     }
 
     public logout(): void {
-        // Para simplificar lo hacemos directo aquí
+
         localStorage.removeItem('auth_user');
         this._user.set(null);
         this.router.navigate(['/login']);

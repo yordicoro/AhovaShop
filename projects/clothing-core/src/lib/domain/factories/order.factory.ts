@@ -4,15 +4,11 @@ import { OrderAggregate } from '../aggregates/order.aggregate';
 import { OrderItemValueObject } from '../../domain/value-objects/order-item.value-object';
 
 export class OrderFactory {
-    /**
-     * Factory Method (Point 10)
-     * Centralizes the creation of the Order Aggregate from cart items.
-     */
+
     static createFromCart(items: CartItem[], customerId: string = 'guest'): OrderAggregate {
         const totalAmount = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         const orderId = Math.random().toString(36).substring(7);
 
-        // Status is passed as a literal string that matches the OrderStatus union type
         const orderEntity = new OrderEntity(
             orderId,
             customerId,

@@ -31,7 +31,7 @@ export class LoggerService {
             userAgent: navigator.userAgent
         };
 
-        // Fire and forget (optional: handle error silently)
+
         this.http.post(this.LOGS_API, logEntry).subscribe();
     }
 

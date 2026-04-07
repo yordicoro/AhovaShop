@@ -2,12 +2,10 @@ import { signal, computed } from '@angular/core';
 import { BasePresenter } from './base.presenter';
 
 export abstract class BasePresenterWithSignals<T> extends BasePresenter {
-    // Signals de estado básico
     private readonly _loading = signal<boolean>(false);
     private readonly _error = signal<string | null>(null);
     private readonly _data = signal<T | null>(null);
 
-    // Readonly computed para exposición pública
     readonly loading = computed(() => this._loading());
     readonly error = computed(() => this._error());
     readonly data = computed(() => this._data());
@@ -39,9 +37,6 @@ export abstract class BasePresenterWithSignals<T> extends BasePresenter {
         this._error.set(null);
     }
 
-    /**
-     * Helper para depurar cambios en signals si es necesario
-     */
     protected debugSignals(): void {
         this.log('Signal State:', {
             loading: this.loading(),

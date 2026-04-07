@@ -13,7 +13,6 @@ export class ProductFormPresenter extends BaseFormPresenter<Product> {
     private getProductByIdUseCase = inject(GetProductByIdUseCase);
     private router = inject(Router);
 
-    // Opciones para selects
     public readonly genderOptions: { value: Gender; label: string }[] = [
         { value: 'MEN', label: 'Hombre' },
         { value: 'WOMEN', label: 'Mujer' },
@@ -55,10 +54,10 @@ export class ProductFormPresenter extends BaseFormPresenter<Product> {
         material: [''],
         composition: [''],
         imageUrl: ['', [Validators.required]],
-        sizes: [[], [Validators.required]], // Array of selected sizes
-        colors: [[], [Validators.required]], // Array of selected colors
-        images: this.fb.array([]), // Multiple images
-        tags: [[]] // Array of tags
+        sizes: [[], [Validators.required]],
+        colors: [[], [Validators.required]],
+        images: this.fb.array([]),
+        tags: [[]]
     });
 
     public isEditMode = false;
@@ -121,7 +120,6 @@ export class ProductFormPresenter extends BaseFormPresenter<Product> {
                         tags: product.tags || []
                     });
 
-                    // Load images into FormArray
                     const imagesArray = this.form.get('images') as FormArray;
                     imagesArray.clear();
                     (product.images || []).forEach(img => {

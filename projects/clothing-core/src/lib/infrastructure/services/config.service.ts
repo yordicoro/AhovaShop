@@ -31,7 +31,6 @@ export class ConfigService {
         try {
             const config = await firstValueFrom(this.http.get<AppConfig>(this.CONFIG_API));
 
-            // Simulación de desencriptación de valores sensibles (Punto 09)
             if (config.security?.encryptionKey) {
                 const decryptedKey = this.security.decrypt(config.security.encryptionKey);
                 console.log(`[ConfigService] Decrypted security key: ${decryptedKey}`);

@@ -11,11 +11,11 @@ export interface AppNotification {
     providedIn: 'root'
 })
 export class NotificationService {
-    // Pub/Sub pattern using RxJS Subject (Point 06)
+
     private notificationSubject = new Subject<AppNotification>();
     notifications$ = this.notificationSubject.asObservable();
 
-    // Modern state management using signals
+
     activeNotification = signal<AppNotification | null>(null);
 
     notify(notification: AppNotification) {

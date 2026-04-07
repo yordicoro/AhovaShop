@@ -12,7 +12,6 @@ export class OrderAggregate {
     }
 
     addMethod(item: OrderItemValueObject): void {
-        // Business logic to add item would go here
         this.items.push(item);
     }
 }

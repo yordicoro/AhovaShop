@@ -10,19 +10,19 @@ import { CartPresenter } from '../../presenters/cart.presenter';
     template: `
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
       <div class="flex flex-col lg:flex-row gap-12">
-        <!-- Main Cart items -->
+
         <div class="flex-grow">
             <div class="flex items-center gap-3 mb-10">
                 <div class="w-8 h-px bg-slate-900"></div>
                 <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-950">Tu Bolsa Curada</h2>
             </div>
-    
+
             <div *ngIf="presenter.cartItems$ | async as cartItems" class="space-y-6">
                 <div *ngIf="cartItems.length > 0; else emptyCart" class="space-y-4">
-                    <div class="glass rounded-3xl overflow-hidden border border-white/40 shadow-xl" 
+                    <div class="glass rounded-3xl overflow-hidden border border-white/40 shadow-xl"
                          *ngFor="let item of cartItems">
                         <div class="cart-item group p-6 flex items-center justify-between gap-6 hover:bg-white/40 transition-all duration-500">
-                            
+
                             <div class="flex items-center gap-6">
                                 <div class="h-24 w-20 bg-white rounded-2xl flex items-center justify-center overflow-hidden border border-slate-200/50">
                                      <img *ngIf="item.imageUrl" [src]="item.imageUrl" [alt]="item.productName" class="w-full h-full object-contain p-2">
@@ -36,7 +36,7 @@ import { CartPresenter } from '../../presenters/cart.presenter';
                                     </p>
                                 </div>
                             </div>
-                        
+
                             <div class="flex flex-col items-end gap-2">
                                 <span class="text-lg font-display font-bold text-slate-950">{{ (item.price * item.quantity) | currency }}</span>
                                 <button (click)="presenter.removeItem(item.productId)" class="text-[9px] font-black uppercase tracking-widest text-slate-400 hover:text-red-500 transition-colors">
@@ -49,12 +49,11 @@ import { CartPresenter } from '../../presenters/cart.presenter';
             </div>
         </div>
 
-        <!-- Summary -->
         <div *ngIf="presenter.cartItems$ | async as cartItems">
             <div *ngIf="cartItems.length > 0" class="lg:w-96">
                 <div class="sticky top-32 glass-dark rounded-3xl p-10 border border-white/10 shadow-2xl text-golden">
                     <h3 class="text-[11px] font-bold uppercase tracking-[0.3em] text-accent-gold mb-10">Resumen de Compra</h3>
-                    
+
                     <div class="space-y-6 mb-10">
                         <div class="flex justify-between items-center bg-white/5 p-4 rounded-2xl border border-white/5">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-slate-900">Subtotal</span>
@@ -76,9 +75,9 @@ import { CartPresenter } from '../../presenters/cart.presenter';
                             <span class="text-4xl font-display font-black text-White-500 tracking-tighter">{{ presenter.calculateTotal(cartItems) | currency }}</span>
                          </div>
                     </div>
-                    
+
                     <button class="
-                    w-full btn-gold py-5 
+                    w-full btn-gold py-5
                     overflow-hidden
                     rounded-3xl
                     hover:scale-105
@@ -86,7 +85,7 @@ import { CartPresenter } from '../../presenters/cart.presenter';
                     hover:shadow-accent-gold/80
                     hover:bg-accent-gold/10
                     shadow-2xl
-                    shadow-accent-gold/80" 
+                    shadow-accent-gold/80"
                     (click)="presenter.checkout(cartItems)"
                     >
                         Realizar Pedido
@@ -101,7 +100,7 @@ import { CartPresenter } from '../../presenters/cart.presenter';
             </div>
         </div>
 
-        <!-- Empty State -->
+
         <ng-template #emptyCart>
              <div class="flex flex-col items-center justify-center py-40 glass rounded-[3rem] border border-dashed border-slate-300 w-full">
                 <div class="relative mb-10 group">

@@ -13,7 +13,6 @@ export class ProductListPresenter extends BasePresenterWithSignals<Product[]> {
         private router: Router
     ) {
         super();
-        // Ejemplo de efecto para debuggear cambios en el estado
         effect(() => {
             this.log('Products State Updated', {
                 count: this.data()?.length || 0,

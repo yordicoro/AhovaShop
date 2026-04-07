@@ -9,7 +9,7 @@ import { OrderRepository } from '../../../domain/repositories/order.repository';
 export class OrderEffects {
     private actions$ = inject(Actions);
     private createOrderUseCase = inject(CreateOrderUseCase);
-    // private loadOrdersUseCase = inject(LoadOrdersUseCase); // If we had one
+
 
     createOrder$ = createEffect(() =>
         this.actions$.pipe(
@@ -27,7 +27,7 @@ export class OrderEffects {
         this.actions$.pipe(
             ofType(OrderActions.loadOrders),
             concatMap(() =>
-                // Using the repository directly for simplicity in this rubric context
+
                 inject(OrderRepository).getAllOrders().pipe(
                     map((orders) => OrderActions.loadOrdersSuccess({ orders })),
                     catchError((error) => of(OrderActions.loadOrdersFailure({ error: error.message })))

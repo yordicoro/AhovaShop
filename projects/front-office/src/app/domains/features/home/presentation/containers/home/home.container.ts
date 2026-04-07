@@ -6,11 +6,10 @@ import { RouterLink } from '@angular/router';
   selector: 'app-home',
   imports: [RouterLink, CommonModule],
   template: `
-    <!-- Main Banner Slider (Simulation) -->
     <section class="max-w-[1440px] mx-auto px-0 sm:px-4 lg:px-8 mt-4">
       <div class="relative aspect-[21/9] sm:aspect-[21/7] w-full overflow-hidden bg-slate-200 group">
-        <img 
-          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop" 
+        <img
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
           alt="Retail Banner"
         >
@@ -28,7 +27,7 @@ import { RouterLink } from '@angular/router';
       </div>
     </section>
 
-    <!-- Quick Navigation Icons -->
+
     <section class="max-w-7xl mx-auto px-4 py-20">
       <div class="grid grid-cols-4 md:grid-cols-8 gap-6 sm:gap-10 overflow-x-auto pb-4 no-scrollbar">
         <div *ngFor="let cat of quickCats" class="flex flex-col items-center gap-4 cursor-pointer group flex-shrink-0">
@@ -40,10 +39,10 @@ import { RouterLink } from '@angular/router';
       </div>
     </section>
 
-    <!-- Featured Grids -->
+
     <section class="max-w-7xl mx-auto px-4 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-        <!-- Promoción 1 -->
+
         <div class="relative aspect-[16/9] overflow-hidden group cursor-pointer rounded-[2.5rem] shadow-2xl" routerLink="/shop">
            <img src="https://images.unsplash.com/photo-1542060717-1738b295ca88?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110">
            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent p-10 flex flex-col justify-end">
@@ -52,7 +51,7 @@ import { RouterLink } from '@angular/router';
              <div class="w-12 h-1 bg-accent-gold mt-6 group-hover:w-24 transition-all duration-500"></div>
            </div>
         </div>
-        <!-- Promoción 2 -->
+
         <div class="relative aspect-[16/9] overflow-hidden group cursor-pointer rounded-[2.5rem] shadow-2xl" routerLink="/shop">
            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2012&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110">
            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent p-10 flex flex-col justify-end">

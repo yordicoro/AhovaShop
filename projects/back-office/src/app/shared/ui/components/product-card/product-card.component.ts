@@ -8,7 +8,7 @@ import { Product } from 'clothing-core';
   imports: [CommonModule, CurrencyPipe],
   template: `
     <div class="group relative glass rounded-[2rem] border border-white/50 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:border-white shadow-xl overflow-hidden bg-white/30 backdrop-blur-md">
-      <!-- Status Badges -->
+
       <div class="absolute top-4 left-4 z-20 flex flex-col gap-2">
         <span class="bg-slate-950 text-accent-gold text-[8px] font-black px-3 py-1 rounded-full uppercase tracking-[0.2em] shadow-lg">
             {{ product?.category || 'General' }}
@@ -20,11 +20,11 @@ import { Product } from 'clothing-core';
         }
       </div>
 
-      <!-- Image Display -->
+
       <div class="relative aspect-square bg-white/40 overflow-hidden p-8 flex items-center justify-center">
         @if (product?.imageUrl) {
-          <img 
-            [src]="product?.imageUrl" 
+          <img
+            [src]="product?.imageUrl"
             [alt]="product?.name"
             class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-700"
           >
@@ -33,28 +33,27 @@ import { Product } from 'clothing-core';
             <span class="text-slate-300 text-[9px] font-black uppercase tracking-widest">Sin Imagen</span>
           </div>
         }
-        
-        <!-- Management Actions Overaly -->
+
+
         <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-500 flex items-center justify-center gap-3">
-          <button 
-            (click)="onAction()" 
+          <button
+            (click)="onAction()"
             class="px-5 py-2.5 bg-white text-slate-950 text-[9px] font-black uppercase tracking-widest rounded-full hover:bg-accent-gold hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
             Vista Previa
           </button>
-          <button 
-            (click)="onEdit($event)" 
+          <button
+            (click)="onEdit($event)"
             class="px-5 py-2.5 bg-accent-gold text-white text-[9px] font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-slate-950 transition-all transform translate-y-4 group-hover:translate-y-0 duration-500 delay-75">
             Modificar
           </button>
         </div>
       </div>
 
-      <!-- Detail Section -->
       <div class="p-6 flex flex-col flex-grow">
         <h3 class="text-xs font-display font-black text-slate-950 line-clamp-2 min-h-[2rem] mb-4 group-hover:text-accent-gold transition-colors leading-relaxed">
             {{ product?.name }}
         </h3>
-        
+
         <div class="mt-auto pt-4 border-t border-slate-950/5 flex items-center justify-between">
             <div class="flex flex-col">
                 <span class="text-[8px] font-black text-slate-400 uppercase tracking-widest mb-1">Valoración</span>

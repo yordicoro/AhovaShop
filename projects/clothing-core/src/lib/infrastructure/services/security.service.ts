@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class SecurityService {
-    /**
-     * Basic sanitization to prevent XSS (Point 07)
-     */
+
     sanitizeHtml(input: string): string {
         if (!input) return '';
         const temp = document.createElement('div');
@@ -14,9 +12,7 @@ export class SecurityService {
         return temp.innerHTML;
     }
 
-    /**
-     * Sanitizes object properties recursively
-     */
+
     sanitizeObject(obj: any): any {
         if (typeof obj !== 'object' || obj === null) return obj;
 
@@ -31,16 +27,11 @@ export class SecurityService {
         return sanitized;
     }
 
-    /**
-     * Encriptación simple Base64 para cumplir con el requisito de seguridad (Punto 07/09)
-     */
+
     encrypt(data: string): string {
         return btoa(data);
     }
 
-    /**
-     * Desencriptación simple Base64
-     */
     decrypt(data: string): string {
         try {
             return atob(data);

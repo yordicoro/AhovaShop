@@ -4,7 +4,7 @@ import { OrderAggregate } from '../../../domain/aggregates/order.aggregate';
 import { OrderActions } from './order.actions';
 
 export interface OrderState extends EntityState<OrderAggregate> {
-    // additional entities state properties
+
     isLoading: boolean;
     error: string | null;
 }
@@ -14,7 +14,7 @@ export const orderAdapter: EntityAdapter<OrderAggregate> = createEntityAdapter<O
 });
 
 export const initialOrderState: OrderState = orderAdapter.getInitialState({
-    // additional entity state properties
+
     isLoading: false,
     error: null,
 });

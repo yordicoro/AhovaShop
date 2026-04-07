@@ -28,10 +28,8 @@ import { DashboardPresenter } from '../../../presenter/dashboard.presenter';
           }
         </div>
       } @else if (presenter.data(); as stats) {
-        <!-- Stats Grid (Luxury Glass) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          
-          <!-- Total Revenue -->
+
           <div class="glass p-8 rounded-[2.5rem] border border-white/50 shadow-xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-500">
             <div class="relative z-10">
               <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">Ingresos Brutos</p>
@@ -45,7 +43,6 @@ import { DashboardPresenter } from '../../../presenter/dashboard.presenter';
             </div>
           </div>
 
-          <!-- Total Orders -->
           <div class="glass p-8 rounded-[2.5rem] border border-white/50 shadow-xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-500">
             <div class="relative z-10">
               <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">Volumen de Adquisición</p>
@@ -59,7 +56,6 @@ import { DashboardPresenter } from '../../../presenter/dashboard.presenter';
             </div>
           </div>
 
-          <!-- Total Inventory -->
           <div class="glass p-8 rounded-[2.5rem] border border-white/50 shadow-xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-500">
             <div class="relative z-10">
               <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">Registro de Activos</p>
@@ -73,7 +69,6 @@ import { DashboardPresenter } from '../../../presenter/dashboard.presenter';
             </div>
           </div>
 
-          <!-- Low Stock -->
           <div class="glass-dark p-8 rounded-[2.5rem] border border-white/10 shadow-2xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-500">
             <div class="relative z-10 text-white">
               <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">Escasez Crítica</p>
@@ -89,7 +84,6 @@ import { DashboardPresenter } from '../../../presenter/dashboard.presenter';
 
         </div>
 
-        <!-- Recent Activity Sections -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div class="lg:col-span-2 glass p-10 rounded-[3rem] border border-white/40 shadow-xl">
             <div class="flex items-center gap-3 mb-8">

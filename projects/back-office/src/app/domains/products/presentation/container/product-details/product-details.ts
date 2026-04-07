@@ -10,7 +10,7 @@ import { ProductDetailsPresenter } from '../../presenter/product-details.present
   providers: [ProductDetailsPresenter],
   template: `
     <div class="p-6 max-w-7xl mx-auto">
-      <!-- Back Button & Breadcrumbs -->
+
       <nav class="flex items-center gap-2 text-slate-500 text-sm mb-8">
         <a routerLink="/inventory" class="hover:text-slate-900 transition-colors flex items-center gap-1">
           <span class="text-lg">←</span> Volver al Inventario
@@ -34,12 +34,12 @@ import { ProductDetailsPresenter } from '../../presenter/product-details.present
       } @else if (presenter.data(); as product) {
         <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div class="grid grid-cols-1 lg:grid-cols-2">
-            
-            <!-- Image Section -->
+
+
             <div class="bg-slate-50 p-12 flex items-center justify-center border-r border-slate-100">
               <div class="relative group">
-                <img 
-                  [src]="product.imageUrl" 
+                <img
+                  [src]="product.imageUrl"
                   [alt]="product.name"
                   class="max-w-full max-h-[500px] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
                 >
@@ -49,7 +49,6 @@ import { ProductDetailsPresenter } from '../../presenter/product-details.present
               </div>
             </div>
 
-            <!-- Content Section -->
             <div class="p-10 lg:p-16 flex flex-col">
               <div class="mb-8">
                 <span class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-2 block">{{ product.category }}</span>
@@ -71,7 +70,7 @@ import { ProductDetailsPresenter } from '../../presenter/product-details.present
               </div>
 
               <div class="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <button 
+                <button
                   [routerLink]="['/inventory/edit', product.id]"
                   class="bg-slate-900 text-white py-4 px-8 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 active:scale-[0.98]">
                   Editar Producto
@@ -81,7 +80,6 @@ import { ProductDetailsPresenter } from '../../presenter/product-details.present
                 </button>
               </div>
 
-              <!-- Extra Info Hooks -->
               <div class="mt-12 pt-8 border-t border-slate-100 grid grid-cols-3 gap-8">
                 <div>
                    <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">SKU</span>

@@ -11,11 +11,11 @@ import { selectItems, ProductActions } from 'clothing-core';
   imports: [RouterLink, CommonModule],
   template: `
     <header class="bg-primary/95 backdrop-blur-md sticky top-0 z-50 border-b border-white/5 shadow-2xl">
-      <!-- Main Bar -->
+
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20 gap-8">
-          
-          <!-- Logo Section -->
+
+
           <div class="flex items-center gap-3 group cursor-pointer" routerLink="/">
             <div class="relative w-12 h-12 flex items-center justify-center">
                 <div class="absolute inset-0 bg-accent-gold rotate-45 rounded-lg opacity-20 group-hover:rotate-90 transition-transform duration-500"></div>
@@ -27,7 +27,6 @@ import { selectItems, ProductActions } from 'clothing-core';
             </div>
           </div>
 
-          <!-- Desktop Navigation -->
           <nav class="hidden lg:flex items-center space-x-10">
             <a (click)="onCategorySelect(null)" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-accent-gold transition-all cursor-pointer relative group/link">
                 Inicio
@@ -47,19 +46,19 @@ import { selectItems, ProductActions } from 'clothing-core';
             </a>
           </nav>
 
-          <!-- Search & Actions -->
+
           <div class="flex items-center gap-6">
-            <!-- Search Icon (Elegant) -->
+
             <button class="text-slate-400 hover:text-white transition-colors">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </button>
 
-            <!-- User -->
+
             <a routerLink="/profile" class="text-slate-400 hover:text-white transition-colors relative">
               <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
             </a>
-            
-            <!-- Cart Icon with Badge -->
+
+
             <a routerLink="/cart" class="relative group">
                <div class="p-2.5 bg-white/5 rounded-full group-hover:bg-accent-gold/10 transition-all border border-white/5 group-hover:border-accent-gold/20">
                     <svg class="h-5 w-5 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
@@ -71,7 +70,7 @@ import { selectItems, ProductActions } from 'clothing-core';
                }
             </a>
 
-            <!-- Mobile Toggle -->
+
             <button (click)="toggleMobileMenu()" class="lg:hidden text-slate-400 hover:text-white">
               <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" [attr.d]="isMenuOpen() ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'"></path>
@@ -81,7 +80,7 @@ import { selectItems, ProductActions } from 'clothing-core';
         </div>
       </div>
 
-      <!-- Mobile Menu Overlay -->
+
       @if (isMenuOpen()) {
         <div class="lg:hidden absolute top-20 w-full glass-dark border-t border-white/10 animate-slide-down shadow-2xl">
           <div class="px-6 py-8 flex flex-col gap-6">
@@ -104,13 +103,13 @@ export class NavbarComponent {
     JEWELRY: "jewelery"
   };
 
-  // Using Signals for local state (Point 06)
+
   isMenuOpen = signal(false);
 
-  // Using toSignal to convert NgRx selector to Signal (integration)
+
   cartItems = toSignal(this.store.select(selectItems), { initialValue: [] });
 
-  // Computed Signal for performance (Point 06)
+
   cartCount = computed(() => this.cartItems()?.reduce((acc, item) => acc + item.quantity, 0) || 0);
 
   private router = inject(Router);

@@ -13,7 +13,6 @@ export class ProductRepositoryImpl extends ProductRepository {
   private http = inject(HttpClient);
   private logger = inject(LoggerService);
 
-  // URL del backend (json-server)
   private readonly API_URL = 'http://localhost:3000/products';
 
   getAll(
@@ -37,7 +36,6 @@ export class ProductRepositoryImpl extends ProductRepository {
       params = params.set('category', filters.category);
     }
 
-    // json-server retorna el total en el header 'X-Total-Count'
     return this.http.get<any[]>(this.API_URL, { params, observe: 'response' }).pipe(
       map(response => {
         const items = response.body || [];
@@ -71,15 +69,11 @@ export class ProductRepositoryImpl extends ProductRepository {
   save(product: Product): Observable<void> {
     this.logger.info('Persisting product to Backend', product);
 
-    // Convertimos la entidad a un objeto plano para el backend
     const productData = { ...product };
 
-    // json-server maneja POST para creación y PUT para actualización completa.
-    // Intentamos ver si existe primero
+
     return this.http.get(`${this.API_URL}/${product.id}`).pipe(
-      // Si existe, actualizamos con PUT
       switchMap(() => this.http.put<void>(`${this.API_URL}/${product.id}`, productData)),
-      // Si no existe (error 404), creamos con POST
       catchError(error => {
         if (error.status === 404) {
           return this.http.post<void>(this.API_URL, productData);

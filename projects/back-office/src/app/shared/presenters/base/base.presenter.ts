@@ -10,7 +10,7 @@ export abstract class BasePresenter {
     }
 
     protected get debugMode(): boolean {
-        return true; // Podría venir de un environment service
+        return true;
     }
 
     protected log(message: string, ...data: any[]): void {

@@ -17,7 +17,6 @@ export class ShopPresenter {
     private store = inject(Store);
     Math = Math;
 
-    // Selectors
     products$ = this.store.select(selectFilteredProducts);
     isLoading$ = this.store.select(selectProductIsLoading);
     selectedCategory$ = this.store.select(selectSelectedCategory);
@@ -25,7 +24,6 @@ export class ShopPresenter {
     page$ = this.store.select(selectPage);
     pageSize$ = this.store.select(selectPageSize);
 
-    // Static Categories (Could also come from a UseCase/Service)
     categories = [
         { id: 'all', label: 'Todo', value: null },
         { id: 'electronics', label: 'Electrónica', value: 'electronics' },
@@ -48,7 +46,6 @@ export class ShopPresenter {
     }
 
     setCategory(category: string | null) {
-        // Dispatching setCategory will trigger handleFilters$ effect in clothing-core
         this.store.dispatch(ProductActions.setCategory({ category }));
     }
 

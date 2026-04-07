@@ -9,11 +9,11 @@ import { Injectable } from '@angular/core';
 })
 export class OrderInfrastructureMapper {
     mapToDomain(dto: any): OrderAggregate {
-        // Soporte para formato anidado (antiguo) o plano (nuevo DTO)
+
         const orderData = dto.order || dto;
 
         const entity = new OrderEntity(
-            dto.id || orderData.id, // Prioritize top-level ID for json-server compatibility
+            dto.id || orderData.id,
             orderData.customerId || dto.customerId,
             orderData.totalAmount || dto.total || 0,
             (orderData.status || 'PENDING') as 'PENDING' | 'CONFIRMED' | 'SHIPPED',
